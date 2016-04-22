@@ -94,7 +94,8 @@ def get_installed_modules():
 filename1 = datetime.now().strftime("%Y%m%d-%H%M%S")
 try:
         file = open(filename1+'_installed_modules.txt', 'w')
-        file.write(','.join(get_installed_modules()))
+        file.write('Version: ' + oerp.version + '\n')
+        file.write(',\n'.join(get_installed_modules()))
         file.close()
 
 except:
